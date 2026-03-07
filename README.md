@@ -11,7 +11,6 @@ Personal global configuration for [Claude Code](https://docs.anthropic.com/en/do
 ├── settings.local.json          # Local permission overrides (not shared across machines)
 ├── .commitlintrc.json           # Conventional Commits lint config (place in ~/)
 ├── agents/
-│   ├── code-reviewer.md         # Independent code review (fork context)
 │   ├── feature-validator.md     # Full-chain feature validation
 │   └── test-runner.md           # Auto-detect & run test suites
 └── skills/
@@ -19,15 +18,16 @@ Personal global configuration for [Claude Code](https://docs.anthropic.com/en/do
         └── SKILL.md             # /validate - lint → typecheck → test → review pipeline
 ```
 
-## Five-Layer Toolchain
+## Six-Layer Toolchain
 
 | Layer | Tool | Purpose |
 |-------|------|---------|
 | 1 | MCP | Playwright (browser), GitHub (API) |
-| 2 | Agents | Explore, Plan, code-reviewer, feature-validator, test-runner |
-| 3 | Skills | /validate, /simplify, /commit, /claude-api |
-| 4 | Hooks | Pre-commit lint, post-commit commitlint, desktop notification |
-| 5 | Bash CLI | git, npm, commitlint |
+| 2 | Plugin | Superpowers (brainstorming, TDD, debugging, code-review, git-worktrees) |
+| 3 | Agents | Explore, Plan, feature-validator, test-runner |
+| 4 | Skills | /validate, /simplify, /commit, /claude-api |
+| 5 | Hooks | Pre-commit lint, post-commit commitlint, desktop notification |
+| 6 | Bash CLI | git, npm, commitlint |
 
 ## Installation
 
@@ -45,6 +45,10 @@ cp .commitlintrc.json ~/
 
 # Install global dependencies
 npm install -g @commitlint/cli @commitlint/config-conventional
+
+# Install Superpowers plugin
+# /plugin marketplace add obra/superpowers-marketplace
+# /plugin install superpowers@superpowers-marketplace
 
 # (Optional) Install BurntToast for Windows toast notifications
 # powershell -Command "Install-Module -Name BurntToast -Force"

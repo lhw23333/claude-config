@@ -29,10 +29,10 @@ Run the project's test suite:
 - Only run if test scripts/configs exist
 
 ### Step 4: Code Review
-Delegate to the `code-reviewer` agent:
-- Use the Agent tool with subagent_type `code-reviewer` (or `general-purpose` if custom agents aren't loaded)
-- Review all staged/unstaged changes
-- Report security, logic, quality issues
+Delegate to the Superpowers code review skill:
+- Invoke `superpowers:requesting-code-review` via the Skill tool
+- Reviews: code quality, architecture, testing, requirements alignment, production readiness
+- Report issues by severity (Critical / Important / Minor)
 
 ### Step 5: Summary Report
 Produce a final summary:
