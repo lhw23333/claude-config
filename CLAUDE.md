@@ -8,6 +8,7 @@
 
 - **Playwright**: 浏览器自动化、E2E 测试、网页截图
 - **GitHub**: PR/Issue/Actions 管理、代码搜索、安全扫描
+- **SSH**: 远程服务器管理 (classfang/ssh-mcp-server, MCP 官方收录)
 - 其他需求优先用 Plugin/Agent/Skill/Hooks/Bash 解决
 
 ### 第二层: Plugin (第三方技能插件)
@@ -48,6 +49,7 @@
 |-------|------|---------|
 | `feature-validator` | 需求匹配 + TypeCheck + Lint + Test + Build 全链路校验 | 功能开发完成后 |
 | `test-runner` | 自动检测测试框架并运行全部测试 | 任何时候验证代码 |
+| `deployment-engineer` | CI/CD、GitOps、Docker/K8s 部署自动化 (来源: wshobson/agents) | 远程部署任务 |
 
 ### 第四层: Skill 使用规范
 

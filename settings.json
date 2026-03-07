@@ -79,6 +79,10 @@
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITHUB_PAT_HERE>"
       }
+    },
+    "ssh": {
+      "command": "npx",
+      "args": ["-y", "@fangjunjie/ssh-mcp-server", "--host", "<SERVER_HOST>", "--port", "22", "--username", "root", "--privateKey", "~/.ssh/id_rsa"]
     }
   }
 }

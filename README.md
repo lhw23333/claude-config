@@ -12,7 +12,8 @@ Personal global configuration for [Claude Code](https://docs.anthropic.com/en/do
 ├── .commitlintrc.json           # Conventional Commits lint config (place in ~/)
 ├── agents/
 │   ├── feature-validator.md     # Full-chain feature validation
-│   └── test-runner.md           # Auto-detect & run test suites
+│   ├── test-runner.md           # Auto-detect & run test suites
+│   └── deployment-engineer.md   # CI/CD, GitOps, Docker/K8s deployment (from wshobson/agents)
 └── skills/
     └── validate/
         └── SKILL.md             # /validate - lint → typecheck → test → review pipeline
@@ -22,9 +23,9 @@ Personal global configuration for [Claude Code](https://docs.anthropic.com/en/do
 
 | Layer | Tool | Purpose |
 |-------|------|---------|
-| 1 | MCP | Playwright (browser), GitHub (API) |
+| 1 | MCP | Playwright (browser), GitHub (API), SSH (remote server) |
 | 2 | Plugin | Superpowers (brainstorming, TDD, debugging, code-review, git-worktrees) |
-| 3 | Agents | Explore, Plan, feature-validator, test-runner |
+| 3 | Agents | Explore, Plan, feature-validator, test-runner, deployment-engineer |
 | 4 | Skills | /validate, /simplify, /commit, /claude-api |
 | 5 | Hooks | Pre-commit lint, post-commit commitlint, desktop notification |
 | 6 | Bash CLI | git, npm, commitlint |
