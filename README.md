@@ -46,7 +46,8 @@ cp .commitlintrc.json ~/
 # Install global dependencies
 npm install -g @commitlint/cli @commitlint/config-conventional
 
-# Install Superpowers plugin
+# Superpowers plugin (settings.json already includes enabledPlugins config)
+# If plugin is not auto-loaded, install manually:
 # /plugin marketplace add obra/superpowers-marketplace
 # /plugin install superpowers@superpowers-marketplace
 

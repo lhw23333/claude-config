@@ -21,6 +21,17 @@
       "Bash(taskkill *)"
     ]
   },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    }
+  },
   "effortLevel": "high",
   "hooks": {
     "PreToolUse": [
