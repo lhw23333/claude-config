@@ -9,6 +9,16 @@
       "Bash(git *)",
       "Bash(npm run *)",
       "Bash(npx *)",
+      "Bash(pnpm *)",
+      "Bash(bun *)",
+      "Bash(biome *)",
+      "Bash(tsx *)",
+      "Bash(type-coverage *)",
+      "Bash(knip *)",
+      "Bash(ts-prune *)",
+      "Bash(syncpack *)",
+      "Bash(changeset *)",
+      "Bash(fast-check *)",
       "Bash(pip *)",
       "Bash(python *)",
       "Bash(echo *)",
@@ -41,11 +51,24 @@
           {
             "type": "command",
             "command": "bash -c 'npm run lint 2>&1 | tail -20; exit ${PIPESTATUS[0]}'"
+          },
+          {
+            "type": "command",
+            "command": "bash -c 'if [ -f tsconfig.json ] && command -v type-coverage >/dev/null 2>&1; then npx type-coverage --at-least 98 2>&1 | tail -10; else echo \"[skip] type-coverage not applicable\"; fi'"
           }
         ]
       }
     ],
     "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'f=\"$CLAUDE_TOOL_FILE_PATH\"; case \"$f\" in *.ts|*.tsx|*.js|*.jsx|*.mjs|*.cjs|*.json) if command -v biome >/dev/null 2>&1; then biome check --write \"$f\" 2>&1 | tail -5 || true; fi ;; esac'"
+          }
+        ]
+      },
       {
         "matcher": "Bash(git commit *)",
         "hooks": [
@@ -80,9 +103,9 @@
         "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_GITHUB_PAT_HERE>"
       }
     },
-    "ssh": {
+    "chrome-devtools": {
       "command": "npx",
-      "args": ["-y", "@fangjunjie/ssh-mcp-server", "--host", "<SERVER_HOST>", "--port", "22", "--username", "root", "--privateKey", "~/.ssh/id_rsa"]
+      "args": ["-y", "chrome-devtools-mcp@latest"]
     }
   }
 }
